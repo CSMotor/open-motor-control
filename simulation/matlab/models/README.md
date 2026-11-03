@@ -10,7 +10,7 @@
 | `Trigger_Algorithm.slx` | 触发框架加六个算法模块 |
 | `Trigger_Carrier.slx` | 加入等腰三角载波与顶点触发 |
 | `Trigger_CarrierPWM 1.slx` | 载波加 PWM 比较，输出六路互补信号 |
-| `Trigger_FOC_Com.slx` | 完整 FOC 闭环，含一拍延迟和死区设置 |
+| `Trigger_FOC_Com.slx` | 完整 FOC 闭环，含一拍延迟 |
 
 ## 各模型说明
 
@@ -32,7 +32,7 @@
 
 ### Trigger_FOC_Com.slx
 
-完整的 FOC 闭环模型，也是整套教程的最终版本。包含单采样单更新载波、PWM 生成、电流环、速度环、Clarke/Park/逆 Park、SVPWM、一拍延迟（Unit Delay）、死区时间设置，以及电机、逆变器和采样。Step 模块给出转速或负载扰动，可以验证系统的跟随性能和抗扰性能。死区设置子系统用 Transport Delay 和逻辑运算模拟上下管的死区时间。
+完整的 FOC 闭环模型。包含单采样单更新载波、PWM 生成、电流环、速度环、Clarke/Park/逆 Park、SVPWM、一拍延迟（Unit Delay），以及电机、逆变器和采样。Step 模块给出转速或负载扰动，可以验证系统的跟随性能和抗扰性能。
 
 ## 使用说明
 
