@@ -11,6 +11,7 @@
 | `Trigger_Carrier.slx` | 加入等腰三角载波与顶点触发 |
 | `Trigger_CarrierPWM 1.slx` | 载波加 PWM 比较，输出六路互补信号 |
 | `Trigger_FOC_Com.slx` | 完整 FOC 闭环，含一拍延迟 |
+| `Trigger_FOC_Deadtime.slx` | 在 Com 基础上加入三路死区 |
 
 ## 各模型说明
 
@@ -33,6 +34,10 @@
 ### Trigger_FOC_Com.slx
 
 完整的 FOC 闭环模型。包含单采样单更新载波、PWM 生成、电流环、速度环、Clarke/Park/逆 Park、SVPWM、一拍延迟（Unit Delay），以及电机、逆变器和采样。Step 模块给出转速或负载扰动，可以验证系统的跟随性能和抗扰性能。
+
+### Trigger_FOC_Deadtime.slx
+
+在 Trigger_FOC_Com 的基础上加入死区。每一相各有一个 Deadzone 子系统，用 Transport Delay 加逻辑判断，生成上桥臂两侧各留一个死区时间的互补驱动信号。可以用来对比有无死区时的相电流波形和 FFT 谐波分布。
 
 ## 使用说明
 
