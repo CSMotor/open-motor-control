@@ -12,6 +12,7 @@
 | `Trigger_CarrierPWM 1.slx` | 载波加 PWM 比较，输出六路互补信号 |
 | `Trigger_FOC_Com.slx` | 完整 FOC 闭环，含一拍延迟 |
 | `Trigger_FOC_Deadtime.slx` | 在 Com 基础上加入三路死区 |
+| `Trigger_FOC_Parameter.slx` | 参数化版本，传感器独立成模块 |
 
 ## 各模型说明
 
@@ -38,6 +39,10 @@
 ### Trigger_FOC_Deadtime.slx
 
 在 Trigger_FOC_Com 的基础上加入死区。每一相各有一个 Deadzone 子系统，用 Transport Delay 加逻辑判断，生成上桥臂两侧各留一个死区时间的互补驱动信号。可以用来对比有无死区时的相电流波形和 FFT 谐波分布。
+
+### Trigger_FOC_Parameter.slx
+
+参数化版本。电流传感器封装成一个独立模块，电机、逆变器、传感器等参数统一在初始化中设置，换电机或者换硬件时只改初始化部分，不用逐个进入子系统修改。
 
 ## 使用说明
 
